@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block center %}
+    <h2> Formulário de Matricula</h2>
+       
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nome" class="form-label">Aluno</label>
+            {{ form.aluno }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="nome" class="form-label">Curso</label>
+            {{ form.curso }}
+        </div>
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">data de matricula</label>
+            {{ form.data_matricula }}
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Data de conclusão</label>
+            {{ form.data_conclusao }}
+        </div>
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nota</label>
+            {{ form.nota_final }}
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>    
+{% endblock %}
+   

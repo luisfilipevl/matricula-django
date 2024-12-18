@@ -1,0 +1,101 @@
+:root {
+  --primary-dark: #1a237e;    /* Azul escuro */
+  --primary: #3f51b5;         /* Azul médio */
+  --primary-light: #7986cb;   /* Azul claro */
+  --accent: #536dfe;          /* Azul accent */
+  --gray-dark: #424242;       /* Cinza escuro */
+  --gray: #757575;           /* Cinza médio */
+  --gray-light: #e0e0e0;     /* Cinza claro */
+}
+
+body {
+    font-size: .875rem;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+    box-shadow: inset -1px 0 0 rgba(26, 35, 126, .1); /* Usando var(--primary-dark) com transparência */
+    background-color: white;
+}
+
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: var(--gray);
+}
+
+.sidebar .nav-link.active {
+    color: var(--accent);
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+/* Navbar */
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: var(--primary-dark);
+    box-shadow: inset -1px 0 0 rgba(26, 35, 126, .25);
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: white;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Utilities */
+.border-top { 
+    border-top: 1px solid var(--gray-light); 
+}
+
+.border-bottom { 
+    border-bottom: 1px solid var(--gray-light); 
+}

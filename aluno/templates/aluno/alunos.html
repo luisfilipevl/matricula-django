@@ -1,0 +1,46 @@
+<!-- aluno/alunos.html -->
+{% extends 'base.html' %}
+
+
+{% block center %}
+  <h2>Lista de Alunos</h2>
+<!-- Botão para Novo Cadastro -->
+  <div class="d-flex justify-content-end">
+    <a href="{% url 'aluno_criar' %}" class="btn btn-success mb-3">Novo Cadastro</a>
+  </div>
+
+  <!-- Tabela de Alunos -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Cidade</th>
+        <th>Curso</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for aluno in page_obj %}
+      <tr>
+        <td>{{ aluno.nome_aluno }}</td>
+        <td>{{ aluno.email }}</td>
+        <td>{{ aluno.cidade.nome }}</td>
+        <td>{{ aluno.curso.nome }}</td>
+        <td>
+          <a href="{% url 'aluno_editar' aluno.id %}" class="btn btn-primary btn-sm">Editar</a>
+          <a href="{% url 'aluno_remover' aluno.id %}" class="btn btn-danger btn-sm">Remover</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5">Nenhum aluno encontrado.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <!-- Controles de Paginação -->
+  {% include 'pagination.html' %}
+
+{% endblock %}
